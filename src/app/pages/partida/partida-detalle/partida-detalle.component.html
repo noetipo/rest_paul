@@ -1,0 +1,54 @@
+<div class="card mb-3">
+  <div class="card-header"><h5>Lista Paridas</h5></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-sm table-hover table-striped">
+      <thead>
+      <tr>
+        <th>Cantidad</th>
+        <th>CodInsumo</th>
+        <th>codPartida</th>
+        <th>cuadrilla</th>
+        <th>idPresupuesto</th>
+        <th>idPresupuestoDetalle</th>
+        <th>insumo</th>
+        <th>Parcial</th>
+        <th>precio</th>
+        <th>tipo</th>
+        <th>unidad</th>
+        <th>Opciones</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pd of partidasDetalle | paginate: { itemsPerPage: 30, currentPage: p } ">
+        <td>{{pd.cantidad}}</td>
+        <td>{{pd.codInsumo}}</td>
+        <td>{{pd.codPartida}}</td>
+        <td>{{pd.cuadrilla}}</td>
+        <td>{{pd.idPresupuesto}}</td>
+        <td>{{pd.idPresupuestoDetalle}}</td>
+        <td>{{pd.insumo}}</td>
+        <td>{{pd.parcial}}</td>
+        <td>{{pd.precio}}</td>
+        <td>{{pd.tipo}}</td>
+        <td>{{pd.unidad}}</td>
+
+        <td>
+          <div class="icon-button-examples">
+            <button type="button" class="btn btn-outline-danger btn-icon"  >
+              <i class="nb-trash"></i>
+            </button>
+            <button type="button" class="btn btn-outline-success btn-icon">
+              <i class="nb-compose"></i>
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-icon">
+              <i class="nb-gear"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

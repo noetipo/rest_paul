@@ -1,0 +1,28 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  /deep/ .angular-tree-component {
+    cursor: default;
+
+    .node-wrapper {
+      .node-content-wrapper {
+        background: none;
+        box-shadow: none;
+        cursor: default;
+      }
+
+      .toggle-children-wrapper {
+        cursor: pointer;
+      }
+    }
+  }
+}
+button {
+  min-width: 12px;
+  max-width: 120px;
+  min-height: 12px;
+  max-height: 30px;
+  padding-top: 0.1px;
+  margin-top: -5px;
+}

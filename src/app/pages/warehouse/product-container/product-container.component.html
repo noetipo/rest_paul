@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <toaster-container [toasterconfig]="config"></toaster-container>
+      <nb-card-header>Categorías/Productos
+        <button class="btn btn-primary btn-sm btn-semi-round" (click)="openTreeProductForm()">Nueva Categoría</button>
+      </nb-card-header>
+      <nb-card-body>
+        <div style="height: 700px; width: 600px; overflow: hidden;">
+          <tree-root
+            #tree
+            [nodes]="nodes"
+            [options]="customTemplateStringOptions"
+            [focused]="true"
+
+          >
+            <ng-template #treeNodeTemplate let-node>
+              <span><b>{{ node.data.alm_producto_nombre}}</b></span>
+              <button class="btn btn-primary btn-sm btn-semi-round" (click)="addNewChildTreeProduct(node.data)">
+                <i class="nb-plus"></i>
+                Agregar <b>{{ childrenCount(node) }}</b>
+              </button>
+              <button class="btn btn-success btn-sm btn-semi-round" (click)="editTreeProduct(node.data)">
+                <i class="nb-compose"></i>
+                Editar
+              </button>
+            </ng-template>
+            <ng-template #loadingTemplate>Loading, please hold....</ng-template>
+          </tree-root>
+        </div>
+        <button
+          (click)="tree.treeModel.expandAll()" class="btn btn-success">
+          Expand All
+        </button>
+        <button
+          (click)="tree.treeModel.collapseAll()" class="btn btn-primary">
+          Collapse All
+        </button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

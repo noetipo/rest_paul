@@ -1,0 +1,32 @@
+<div class="card mb-3">
+  <div class="card-header"><h5>Lista de Usuarios Roles</h5></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-sm table-hover table-striped">
+      <thead>
+      <tr>
+        <th>Id Rol</th>
+        <th>Rol</th>
+
+        <th>Opciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of checklist">
+        <td>{{a.id}}</td>
+        <td>{{a.name}}</td>
+        <td>
+          <label class="container">
+            <input type="checkbox" class="custom-control-input" [(ngModel)]="a.checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="form-group row col-lg-12">
+      <button class="btn btn-danger btn-sm btn-semi-round" (click)="backUserRol()">Atras</button>
+      <button class="btn btn-primary btn-sm btn-semi-round" (click)="saveUserRol()">Guardar</button>
+    </div>
+  </div>
+
+</div>

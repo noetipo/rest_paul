@@ -1,0 +1,90 @@
+<!--<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Clientes
+        <button class="btn  btn-tn btn-danger" [nbPopover]="newPerson" (click)="openRolForm()"><i
+          class="fa fa-plus-circle"> Nuevo Rol</i></button>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-lg-4">
+            <ngx-person-form [person]="person" [hidden]="!personFormShow" (onCancel)="onConcel($event)"
+                             (onSave)="onSavePersonForm($event)"></ngx-person-form>
+          </div>
+          <div class="col-lg-8">
+            <form [formGroup]="personSearchForm">
+              <div class="form-group row required">
+                <div class="input-group input-group-sm col-sm-3">
+                  <label class="col-form-label">Dni</label>
+                </div>
+                <div class="col-sm-9 input-group input-group-sm">
+                  <input type="text"
+                         class="form-control"
+                         formControlName="dni" id="dni" placeholder="Buscar por Dni">
+                </div>
+                <ngx-ventas-form-validate-errors
+                  [group]="personSearchForm"
+                  [controlName]="'dni'">
+                </ngx-ventas-form-validate-errors>
+              </div>
+              <div class="row ">
+                <div class=" offset-md-8 offset-lg-8 col-md-8">
+                  <button class="btn  btn-tn btn-danger" (click)="cancelForm()"><i
+                    class="fa fa-ban"></i> Cancelar
+                  </button>
+                  <button class="btn  btn-tn btn-success" (click)="SearchForm()"><i
+                    class="fa fa-search"></i> Buscar
+                  </button>
+                </div>
+              </div>
+            </form>
+            <ngx-person-list [persons]="persons"></ngx-person-list>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>-->
+
+
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>
+        <div class="row col-md-12 form-group">
+          <div class="col-md-4">
+            <form [formGroup]="personSearchForm">
+              <div class="form-group row required">
+                <div class="input-group input-group-sm col-sm-3">
+                  <label class="col-form-label">Dni</label>
+                </div>
+                <div class="col-sm-9 input-group input-group-sm">
+                  <input type="text"
+                         class="form-control"
+                         formControlName="dni" id="dni" placeholder="Buscar por Dni">
+                </div>
+                <erpv-form-validate-errors
+                  [group]="personSearchForm"
+                  [controlName]="'dni'">
+                </erpv-form-validate-errors>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <button class="btn  btn-tn btn-success" (click)="SearchForm()"><i
+              class="fa fa-search"></i> Buscar
+            </button>
+            <button class="btn  btn-tn btn-danger" (click)="cancelForm()"><i
+              class="fa fa-ban"></i> Cancelar
+            </button>
+          </div>
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="container">
+          <erpv-person-list [persons]="persons"></erpv-person-list>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

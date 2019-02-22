@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 class="modal-title">Nuevo Rol</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancelForm()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="rolForm">
+<div class="modal-body">
+  <div class="form-group row required">
+    <div class="input-group input-group-sm col-sm-3">
+      <label class="col-form-label">Rol</label>
+    </div>
+    <div class="col-sm-9 input-group input-group-sm input-group-rounded">
+      <input type="text"
+             class="form-control"
+             formControlName="seg_rol_nombre" id="seg_rol_nombre" placeholder="Nombre Rol">
+    </div>
+    <erpv-form-validate-errors
+      [group]="rolForm"
+      [controlName]="'nombre'">
+    </erpv-form-validate-errors>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary btn-sm btn-semi-round" (click)="saveForm()">Guardar</button>
+  <button class="btn btn-danger btn-sm btn-semi-round" (click)="cancelForm()">Cancelar</button>
+</div>
+</form>
+

@@ -1,0 +1,115 @@
+<div class="modal-header">
+  <h4 class="modal-title">Persona</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancelPersonForm()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="personForm">
+  <div class="modal-body">
+
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Nombre</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="seg_per_nombres" id="seg_per_nombres" placeholder="Nombres">
+      </div>
+      <erpv-form-validate-errors
+        [group]="personForm"
+        [controlName]="'seg_per_nombres'">
+      </erpv-form-validate-errors>
+    </div>
+
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Paterno</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="seg_per_apellido_paterno" id="seg_per_apellido_paterno" placeholder="Apellido Paterno">
+      </div>
+      <erpv-form-validate-errors
+        [group]="personForm"
+        [controlName]="'seg_per_apellido_paterno'">
+      </erpv-form-validate-errors>
+    </div>
+
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Materno</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="seg_per_apellido_materno" id="seg_per_apellido_materno" placeholder="Apellido Materno">
+      </div>
+      <erpv-form-validate-errors
+        [group]="personForm"
+        [controlName]="'seg_per_apellido_materno'">
+      </erpv-form-validate-errors>
+    </div>
+
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">DNI</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="seg_per_dni" id="seg_per_dni" placeholder="Dni">
+      </div>
+      <erpv-form-validate-errors
+        [group]="personForm"
+        [controlName]="'seg_per_dni'">
+      </erpv-form-validate-errors>
+    </div>
+
+    <div class="form-group row ">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Dirección</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="seg_per_direccion" id="seg_per_direccion" placeholder="Direccion">
+      </div>
+    </div>
+    <div class="form-group row ">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Celular</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="seg_per_telefono" id="seg_per_telefono" placeholder="Telefono Celular">
+      </div>
+    </div>
+    <div class="form-group row ">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Correo</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="seg_per_email" id="seg_per_email" placeholder="Correo Electrónico">
+      </div>
+    </div>
+    <div class="form-group row ">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Usuario</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               formControlName="user_id" id="user_id" placeholder="Usuario Id">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary btn-sm btn-semi-round" (click)="savePersonForm()">Guardar</button>
+    <button class="btn btn-danger btn-sm btn-semi-round" (click)="cancelPersonForm()">Cancelar</button>
+  </div>
+</form>

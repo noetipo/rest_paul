@@ -1,0 +1,22 @@
+fieldset.scheduler-border {
+  border: 2px groove #ddd !important;
+  padding: 0 10px;
+  margin: 0 0 1.5em !important;
+
+  box-shadow: 2px 2px #69648a;
+}
+
+.icon-button-examples {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    min-width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    max-height: 25px;
+    padding-top: 0.1px;
+    margin-bottom: -5px;
+    margin-top: -5px;
+  }
+}

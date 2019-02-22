@@ -1,0 +1,28 @@
+fieldset.scheduler-border {
+  border: 2px groove #ddd !important;
+  box-shadow: 2px 2px #69648a;
+  padding: 0 10px;
+  margin: 0 0 1.5em !important;
+}
+
+.form-group.required label::after {
+  content: '*';
+  color: red;
+}
+
+.ng-valid:not(form) {
+  border-left: 5px solid #42a948;
+
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+
+}
+.modal-footer button {
+  min-width: 12px;
+  max-width: 120px;
+  min-height: 12px;
+  max-height: 30px;
+  margin-top: -5px;
+}

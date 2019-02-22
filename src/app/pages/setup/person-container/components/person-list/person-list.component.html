@@ -1,0 +1,40 @@
+<div class="card mb-3">
+  <div class="card-header"><h5>Lista de Personas</h5></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-sm table-hover table-striped">
+      <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Dni</th>
+        <th>Dirección</th>
+        <th>Corréo</th>
+        <th>Teléfono</th>
+        <th>Opciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let person of persons | paginate: { itemsPerPage: 10, currentPage: p } ">
+        <td>{{person.seg_per_nombres}}</td>
+        <td>{{person.seg_per_apellido_paterno}} {{person.seg_per_apellido_materno}}</td>
+        <td>{{person.seg_per_dni}}</td>
+        <td>{{person.seg_per_direccion}}</td>
+        <td>{{person.seg_per_email}}</td>
+        <td>{{person.seg_per_telefono}}</td>
+        <td>
+          <div class="icon-button-examples">
+            <button type="button" class="btn btn-outline-danger btn-icon" (click)="onDeletePerson(person)">
+              <i class="nb-trash"></i>
+            </button>
+            <button type="button" class="btn btn-outline-success btn-icon" (click)="onEditPerson(person)">
+              <i class="nb-compose"></i>
+            </button>
+
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

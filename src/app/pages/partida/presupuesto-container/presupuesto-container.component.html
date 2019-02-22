@@ -1,0 +1,53 @@
+<div class="card mb-3">
+  <div class="card-header"><h5>Lista Paridas</h5></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-sm table-hover table-striped">
+      <thead>
+      <tr>
+        <th>Orden</th>
+        <th>Secuencial</th>
+        <th>CodPartida</th>
+        <th>Descripción</th>
+        <th>Unidad</th>
+        <th>Metrado</th>
+        <th>Precio</th>
+        <th>Parcial</th>
+        <th>CodPresupuesto</th>
+        <th>CodSubpresupuesto</th>
+        <th>subPresupuesto</th>
+        <th>Opciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let partida of partidas | paginate: { itemsPerPage: 30, currentPage: p } ">
+        <td>{{partida.orden}}</td>
+        <td>{{partida.secuencial}}</td>
+        <td>{{partida.codPartida}}</td>
+        <td>{{partida.descripcion}}</td>
+        <td>{{partida.unidad}}</td>
+        <td>{{partida.metrado}}</td>
+        <td>{{partida.precio}}</td>
+        <td>{{partida.parcial}}</td>
+        <td>{{partida.codPresupuesto}}</td>
+        <td>{{partida.codSubpresupuesto}}</td>
+        <td>{{partida.subPresupuesto}}</td>
+        <td>
+          <div class="icon-button-examples">
+            <button type="button" class="btn btn-outline-danger btn-icon"
+                    (click)="verDetalle(partida.codPartida)" *ngIf="partida.unidad!==''">
+              <i class="nb-trash"></i>
+            </button>
+            <!--<button type="button" class="btn btn-outline-success btn-icon">
+            <i class="nb-compose"></i>
+          </button>
+        <button type="button" class="btn btn-outline-primary btn-icon">
+            <i class="nb-gear"></i>
+          </button>-->
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

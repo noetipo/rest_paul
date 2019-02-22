@@ -1,0 +1,30 @@
+@import 'themes';
+@include nb-install-component() {
+
+    .form-group.required label::after {
+        content: '*';
+        color: red;
+    }
+    .lamb-group-buttons {
+        float: right;
+    }
+    /** Styles Entity childs */
+    .lamb-option {
+        pointer-events: none;
+        text-transform: uppercase;
+    }
+    .lamb-option-child {
+        margin-left: 5px;
+    }
+    /** validate forms */
+    /*.ng-valid[required], .ng-valid.required  {*/
+
+    .ng-valid:not(form) {
+        border-left: 5px solid #42a948;
+        /* green */
+    }
+    .ng-invalid:not(form) {
+        border-left: 5px solid #a94442;
+        /* red */
+    }
+}

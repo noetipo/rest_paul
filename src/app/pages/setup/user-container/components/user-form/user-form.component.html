@@ -1,0 +1,73 @@
+<div class="modal-header">
+  <h4 class="modal-title">Nuevo Usuario</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancelUserForm()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="userForm">
+  <div class="modal-body">
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Usuario</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm input-group-rounded">
+        <input type="text"
+               class="form-control"
+               formControlName="name" id="name" placeholder="Usuario">
+      </div>
+      <erpv-form-validate-errors
+        [group]="userForm"
+        [controlName]="'name'">
+      </erpv-form-validate-errors>
+    </div>
+
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Email</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm input-group-rounded">
+        <input type="text"
+               class="form-control"
+               formControlName="email" id="email" placeholder="Correo electrónico">
+      </div>
+      <erpv-form-validate-errors
+        [group]="userForm"
+        [controlName]="'email'">
+      </erpv-form-validate-errors>
+    </div>
+
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Contraseña</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm input-group-rounded">
+        <input type="password"
+               class="form-control"
+               formControlName="password" id="password" placeholder="Contraseña">
+      </div>
+      <erpv-form-validate-errors
+        [group]="userForm"
+        [controlName]="'password'">
+      </erpv-form-validate-errors>
+    </div>
+    <div class="form-group row required">
+      <div class="input-group input-group-sm col-sm-3">
+        <label class="col-form-label">Contraseña</label>
+      </div>
+      <div class="col-sm-9 input-group input-group-sm input-group-rounded">
+        <input type="password"
+               class="form-control"
+               formControlName="c_password" id="c_password" placeholder="Confirmar Contraseña">
+      </div>
+      <erpv-form-validate-errors
+        [group]="userForm"
+        [controlName]="'c_password'">
+      </erpv-form-validate-errors>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary btn-sm btn-semi-round" (click)="saveUserForm()">Guardar</button>
+    <button class="btn btn-danger btn-sm btn-semi-round" (click)="cancelUserForm()">Cancelar</button>
+  </div>
+</form>
+

@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h4 class="modal-title">Editar Rol</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancelForm()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="rolForm">
+  <div class="form-group row required">
+    <div class="input-group input-group-sm col-sm-3">
+      <label class="col-form-label">Rol</label>
+    </div>
+    <div class="col-sm-9 input-group input-group-sm input-group-rounded">
+      <input type="text"
+             class="form-control"
+             formControlName="rol_nombre" id="rol_nombre" placeholder="Nombre Rol">
+    </div>
+    <erpv-form-validate-errors
+      [group]="rolForm"
+      [controlName]="'nombre'">
+    </erpv-form-validate-errors>
+  </div>
+  <div class="row">
+    <div class="input-group input-group-sm col-sm-3">
+      <label class="col-form-label">Estado</label>
+    </div>
+    <div class="col-sm-9" (click)="switch()" class="switch" [ngClass]="{ 'checked': value }">
+      <input type="checkbox" class="switch-input" value="value"
+             [attr.checked]="value"  id="estate">
+      <span class="switch-label" data-on="Si" data-off="No"></span><span class="switch-handle"></span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary btn-sm btn-semi-round" (click)="editForm()">Guardar</button>
+    <button class="btn btn-danger btn-sm btn-semi-round" (click)="cancelForm()">Cancelar</button>
+  </div>
+</form>
+
+
+

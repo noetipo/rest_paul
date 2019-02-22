@@ -1,0 +1,51 @@
+@import '../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+  nb-card-footer {
+    padding-bottom: 0.25rem;
+
+    button {
+      @include nb-ltr(margin, 0 1rem 1rem 0);
+      @include nb-rtl(margin, 0 0 1rem 1rem);
+    }
+  }
+
+  /* stylelint-disable */
+  toaster-container /deep/ {
+    #toast-container .toast-close-button {
+      right: 0;
+    }
+  }
+  /* stylelint-enable */
+
+  @include media-breakpoint-down(xs) {
+    .dropdown-toggle {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+
+
+
+button {
+  min-width: 12px;
+  max-width: 120px;
+  min-height: 12px;
+  max-height: 30px;
+  padding-top: 0.1px;
+  margin-top: -5px;
+}
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
